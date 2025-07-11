@@ -20,6 +20,14 @@ Mac comes with an older version of ruby. To install latest, first install `rbenv
 ### KDoctor:
 `brew install kdoctor`
 
+### Python install:
+Install `pyenv` first by `brew `
+install latest defacto version by `pyenv install`
+show all available installable version by `pyenv install --list`
+show all already install version by `pyenv versions`
+set or show global or local version `pyenv global/local` and set `pyenv global/local <python-version-number>`
+NB: installed python can be checked by `python3 --version`
+
 ### Gradle Guide:
 Android build system: https://developer.android.com/build/gradle-build-overview
 Gradle beyond the basics: https://docs.gradle.org/current/userguide/intro_multi_project_builds.html
