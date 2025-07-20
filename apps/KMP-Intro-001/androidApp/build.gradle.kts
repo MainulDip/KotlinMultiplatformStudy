@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.compose.compiler)
 }
 
+println("Hello world, ${project.name}")
+
 android {
     namespace = "com.example.intro_001_kmp.android"
     compileSdk = 35

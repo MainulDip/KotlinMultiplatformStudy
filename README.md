@@ -30,4 +30,4 @@ NB: installed python can be checked by `python3 --version`
 
 ### Gradle Guide:
 Android build system: https://developer.android.com/build/gradle-build-overview
-Gradle beyond the basics: https://docs.gradle.org/current/userguide/intro_multi_project_builds.html
+Gradle beyond the basics: https://docs.gradle.org/current/userguide/intro_multi_project_builds.html.
