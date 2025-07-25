@@ -1,5 +1,9 @@
 ### Compiling and running a java file:
-Java files are compiled using `javac` (java compiler), and a compiled java class usually have `<name>.class` signature.
+Java files need to be compiled into java byte code. `.class` for single file and `.jar` for multiple related files. Java Archive (jar) is kind of a zipped file contain `.class`, `MANIFEST.MF` and all kinds of files for that project, sometimes also containing the source code as well. 
+
+* `.war` is a type of `.jar` file (for web servers), can contain `html/css/js`, databases, beans etc along with manifest.mf inside of `META-INF/` 
+
+`.java` files are first needs to be compiled using `javac` (java compiler), and a compiled java class usually have `<name>.class` signature.
 
 To run a compiled class (assuming it has public static void main method)
 - `java CompiledClassName` will execute the file 
@@ -28,3 +32,8 @@ Main-Class: CustomClass
 ```
 
 * When there is a manifest file, `-jar` option needs to be specified, as `java -jar ./build/libs/Gradle-Basic.jar`
+
+### Next Steps:
+- Get Going With Gradle | course from Tom Gragory 
+- Gradle ultimate guide | course from Phillip Lackner
+- Gradle Custom Plugin | official guide
