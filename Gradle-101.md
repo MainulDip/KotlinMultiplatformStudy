@@ -35,6 +35,17 @@ dependencies {
 
 after this, all classes will be accessible in caller module classes
 
+
+### Gradle Task:
+Tasks are used to build the java/kotlin project/s. Tasks contain `actions` to build the artifact. 
+
+Task can be created on build.gradle file or can be added using plugins. Dependencies add their own tasks to build its own artifact/output (jar). 
+
+`./gradlew tasks` will list all root project tasks
+`./gradlew module:tasks` will list the module specific tasks
+
+Tasks can be configured
+
 ### `defaultConfig`
 
 ### `flavorDimension` and `productFlavors`:

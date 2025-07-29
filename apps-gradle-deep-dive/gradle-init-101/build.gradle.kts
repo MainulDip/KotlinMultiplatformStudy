@@ -11,6 +11,26 @@ tasks {
     }
 }
 
+//tasks.named("jar") {
+//
+//}
+
+tasks.named<Jar>("jar") {
+//    manifest {
+////        attributes("Main-Class" to "MyClass")
+//        attributes["Main-Class"] = "MyClass"
+//    }
+    manifest {
+
+    }
+}
+
+sourceSets {
+    java {
+
+    }
+}
+
 testing {
     suites {
         val test by getting(JvmTestSuite::class) {

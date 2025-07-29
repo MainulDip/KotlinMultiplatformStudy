@@ -33,6 +33,22 @@ Main-Class: CustomClass
 
 * When there is a manifest file, `-jar` option needs to be specified, as `java -jar ./build/libs/Gradle-Basic.jar`
 
+### Java Standard Directory Structure:
+`src/main/java` | any Java source code files, `.java/.kt`
+`src/main/resources` | any files other than `.java` file
+`src/test/java` | any Java test code files, `.java/.
+`src/test/resources` | resources (non .java files) files for testing
+
+Usually the package name comes like directory names after main source code, `src/main/java/com/example`
+
+* `com.domain.package.Class.java` is an established Java convention wherein the namespace is qualified with the company domain in reverse `com.websolverpro`. The package/project name names comes after domain.
+
+A full qualified class name is the namespace followed by the class name, ie, `com.websolverpro.package.MyClass.java`
+
+The idea is to make sure all package names are unique world-wide, by having authors use a variant of a DNS name they own to name the package.
+
+email name can also be used for namespace, eg, bob@gmail.com would become com.gmail.bob as namespace. 
+
 ### Next Steps:
 - Get Going With Gradle | course from Tom Gragory 
 - Gradle ultimate guide | course from Phillip Lackner
