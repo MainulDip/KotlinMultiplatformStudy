@@ -6,6 +6,27 @@ For multi module setup, there is only one root `build.gradle`, and every module 
 - `setting.gradle` is vital for setting up remote library download repository and defining the root and sub modules.
 
 
+### Opening project using terminal | Intellij Idea | Android Studio:
+When installed from Jetbrains Toolbox, each app launching shell scrip is by default generated into `~/Library/Application Support/JetBrains/Toolbox/scripts`.
+
+`idea` for Intellij Idea, `idea1` if there are 2 version of it
+`studio` for Android Studio, `studio1` if 2 version of Android Studio
+
+
+`idea ./projectDirectory` will open the project in IDE 
+
+
+https://www.jetbrains.com/help/idea/working-with-the-ide-features-from-command-line.html
+
+### Intellij Idea Project Setup and Config:
+If JDK mismatched, either change option in gradle build or change project settings from `file > project structure`
+
+To change app configuration, add or edit a configuration, make sure
+- JDK matches
+- ClassPath `-cp` matches
+- Main Class matches
+
+
 ### 4 terms of gradle:
 - Project - usually created by `gradle init` and providing project name option in the prompt. And the project name is stored in `settings.gradle` file as `rootProject.name`
 
@@ -45,6 +66,8 @@ Task can be created on build.gradle file or can be added using plugins. Dependen
 `./gradlew module:tasks` will list the module specific tasks
 
 Tasks can be configured
+
+### Gradle Task Graph
 
 ### `defaultConfig`
 
