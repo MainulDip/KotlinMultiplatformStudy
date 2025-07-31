@@ -41,3 +41,14 @@ tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+tasks.register("hello") {
+    println(this.name)
+    doLast {
+        println("hello")
+    }
+}
+
+fun hello() {
+
+}

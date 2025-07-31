@@ -26,6 +26,17 @@ To change app configuration, add or edit a configuration, make sure
 - ClassPath `-cp` matches
 - Main Class matches
 
+### Intellij Idea more shortcuts (vvi):
+`ctrl + ship + p` to show the return type of a function
+`opt/alt + cmd + L` to format the code or (code > reformat)
+`shift + cmd + up/down` to move code block up and down
+
+### Kotlin named parameter and Java's non named argument:
+As per kotlin docs
+    When calling Java functions on the JVM, you can't use the named argument syntax because Java bytecode does not always preserve the names of function parameters.
+
+Like `tasks.register(name = "newTask")` will not work as expected, here the named parameter function (which is a extension function from kotlin) is different than the expected java function to create a new task. So better to stay with non named parameter while writing kotlin.
+
 
 ### 4 terms of gradle:
 - Project - usually created by `gradle init` and providing project name option in the prompt. And the project name is stored in `settings.gradle` file as `rootProject.name`
@@ -64,6 +75,15 @@ Task can be created on build.gradle file or can be added using plugins. Dependen
 
 `./gradlew tasks` will list all root project tasks
 `./gradlew module:tasks` will list the module specific tasks
+
+
+### Gradle Task Creation and Config:
+With gradle task, 3 kind of states can occurred
+- Registering a task - using a task (implemented by you or provided by Gradle, Zip, Copy Delete ...) in your build logic.
+- Configuring a task - defining inputs and outputs for a registered task.
+- Implementing a task - creating a custom task class (i.e., custom class type).
+
+
 
 Tasks can be configured
 
