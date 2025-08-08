@@ -76,6 +76,8 @@ Task can be created on build.gradle file or can be added using plugins. Dependen
 `./gradlew tasks` will list all root project tasks
 `./gradlew module:tasks` will list the module specific tasks
 
+`gw` can be used as shortcut for `./gradlew` if https://github.com/gdubw/gng is installed
+
 
 ### Gradle Task Creation and Config:
 With gradle task, 3 kind of states can occurred
@@ -83,11 +85,73 @@ With gradle task, 3 kind of states can occurred
 - Configuring a task - defining inputs and outputs for a registered task.
 - Implementing a task - creating a custom task class (i.e., custom class type).
 
+* Creating a simple task and including into build task
+
+```kotlin
+tasks.register("hello") {
+    group = "Build"
+    description = "custom task description"
+    println("Custom task name is $this.name")
+    doLast {
+        println("do last as :hello")
+    }
+    // dependsOn("build") // this will create circular reference error
+    // as we're also configure the build task to call this task
+}
+
+// this `hello` task can be executed using 
+// `./gradlew hello` or `./gradlew :module:hello`
+
+tasks {
+    build {
+        dependsOn("hello")
+    }
+}
+// after including it in build task (through configuration technique), `/.gradlew build` call will also execute the hello task
+
+// can be written with preferred named block
+tasks.named<DefaultTask>("build") {
+    println("Printing from taskes.named(\"build\")")
+    dependsOn("hello")
+}
+```
+
 
 
 Tasks can be configured
 
 ### Gradle Task Graph
+
+
+### Gradle Plugin:
+Plugins encapsulate logic for specific tasks or integrations, such as compiling code, running tests, or deploying artifacts. By applying plugins, users can easily add new features to their build process without having to write complex code from scratch.
+
+This plugin-based approach allows Gradle to be lightweight and modular. It also promotes code reuse and maintainability, as plugins can be shared across projects or within an organization.
+
+Usually there're 3 different kinds of plugins
+
+    1. Core Plugins - plugins that come from Gradle.
+
+    2. Community Plugins - plugins that come from Gradle Plugin Portal or a public repository.
+
+    3. Local or Custom Plugins - plugins that you develop yourself.
+
+Docs: https://docs.gradle.org/current/userguide/custom_plugins.html
+
+### Custom Gradle Plugin:
+Custom plugin can be 3 types
+    1. Script plugin (not recommended, but for simple task, its ok) | implemented separately in a <name>.gradle.kts file and applied using `apply(from = "<name>.gradle.kts")` from a build.gradle file
+
+    2. Precompiled Script plugin (aka, convention plugin) | implemented inside of `buildSrc` folder or composite build
+
+    3. Binary Plugin (a published jar file for plugin) 
+
+* Script Plugin
+
+```kotlin
+
+```
+
 
 ### `defaultConfig`
 
